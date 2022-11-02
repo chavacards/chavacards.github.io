@@ -1,22 +1,73 @@
-* {
-    font-family: Helvetica, Arial, sans-serif;
-}
-
 body{
-    background-color: navy;
+    background-color:black;
+    font-family: 'DotGothic16', sans-serif;
 }
 
-h1 {
-    color: SeaGreen;
-}
-
-
-p,
-li {
-    font-size: 18px;
+section{
+    height: 500px;
+    background-color: black;
+    
 }
 
 
-a {
-    text-decoration: none;
+nav{
+    display: flex;
+    justify-content: space-between;
+    font-size:40px;
+    color: #1DB954;
+    background-color: black;
+    height: 100px;
+}
+
+.navBar ul{
+    display: flex;
+    list-style-type: none;
+    justify-content: space-around;
+    font-size: 30px;
+    width: 500px;
+    color: #1DB954;
+
+}
+.intro {
+    height: 100vh;
+    /*background-image: url('sumidero.jpg');*/
+    background-color: black;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    margin-top: 0px;
+    margin-left: 80px;
+}
+
+.intro p{
+    font-size: 35px;
+    color:white;
+}
+
+h1{
+    font-size:50px;
+    color:#1DB954;
+    width: 900px;
+}
+
+.button{
+    margin-top: 0px;
+    width:150px;
+    height:50px;
+    background-color: purple;
+    border-radius:25px;
+    text-align: center;
+    font-size: 29px;
+}
+
+.button, h1{
+    display: inline-block;
+    justify-content: space-between;
+    margin-right: 223px;
+    vertical-align:auto;
+}
+
+footer {
+    height: 500px;
+    background-color: darkcyan;
 }
