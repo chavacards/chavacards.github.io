@@ -1,0 +1,101 @@
+body{
+    background-color:black;
+    font-family: 'DotGothic16', sans-serif;
+}
+
+section{
+    height: 500px;
+    background-color: black;
+    
+}
+
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    font-size:40px;
+    color: #1DB954;
+    background-color: black;
+    height: 16.1vh;
+}
+
+.navBar ul{
+    display: flex;
+    list-style-type: none;
+    justify-content: space-around;
+    font-size: 40px;
+    width: 590px;
+    color: #1DB954;
+
+}
+
+.intro {
+    height: 100vh;
+    background-image: url('./images/nasa.jpg');
+    background-repeat: no-repeat;
+    object-fit: contain;
+    background-size: cover;
+}
+
+.introArea {
+    display: flex; 
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 80px;
+    margin-right: 22px;
+    
+}
+
+.social {
+    color: white;
+    align-items: center;
+}
+
+.github {
+    height: 105px;
+    position: relative;
+    top: 0px;
+    left: 104px
+    
+}
+
+.twitter {
+    height: 65px;
+    position: relative;
+    top: 60px;
+    left: 10px
+}
+
+.intro p{
+    font-size: 35px;
+    color:white;
+}
+
+h1{
+    font-size:50px;
+    color:#1DB954;
+}
+
+.button{
+    margin-top: 0px;
+    width:150px;
+    height:50px;
+    background-color:goldenrod;
+    border-radius:25px;
+    text-align: center;
+    font-size: 29px;
+    color:black;
+}
+
+.button:hover{
+    background-color: fuchsia;
+    color: black;
+}
+
+
+
+footer {
+    height: 500px;
+    background-color: darkcyan;
+}
