@@ -16,40 +16,48 @@ nav{
     font-size:40px;
     color: #1DB954;
     background-color: black;
-    height: 16.1vh;
+
+    
 }
 
 .navBar ul{
     display: flex;
     list-style-type: none;
     justify-content: space-around;
-    font-size: 40px;
-    width: 590px;
+    font-size: 30px;
+    height:100%;
+    width: 48%;
     color: #1DB954;
-
+    align-items: center;
 }
 
+
 .intro {
+    display: flex;
     height: 100vh;
     background-image: url('./images/nasa.jpg');
     background-repeat: no-repeat;
     object-fit: contain;
     background-size: cover;
+    
+}
+
+.socials{
+    margin:30px;
 }
 
 .introArea {
     display: flex; 
     height: 100%;
+    width:100%;
+    margin-top: 3.9%;
+    margin-left: 3.5%;
     justify-content: space-between;
     align-items: center;
-    margin-left: 80px;
-    margin-right: 22px;
-    
 }
 
-.social {
-    color: white;
-    align-items: center;
+.socials{
+    padding-bottom: 100px;
 }
 
 .github {
@@ -67,8 +75,12 @@ nav{
     left: 10px
 }
 
+.logo{
+    height: 120px;
+}
+
 .intro p{
-    font-size: 35px;
+    font-size: 30px;
     color:white;
 }
 
@@ -94,6 +106,21 @@ h1{
 }
 
 
+.sub-section{
+    display:flex;
+    justify-content: space-around;
+    color: whitesmoke;
+    
+}
+
+.information{
+    padding: 80px;
+}
+
+h2{
+    font-size: 40px;
+    color: fuchsia;
+}
 
 footer {
     height: 500px;
