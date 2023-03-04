@@ -4,17 +4,20 @@ body{
 }
 
 section{
-    height: 500px;
+    
     background-color: black;
     
 }
 
+.logo {
+    height: 100px;
+}
 
 nav{
     display: flex;
     justify-content: space-between;
     font-size:40px;
-    color: #1DB954;
+    color: #de7d00;
     background-color: black;
 
     
@@ -27,7 +30,7 @@ nav{
     font-size: 30px;
     height:100%;
     width: 48%;
-    color: #1DB954;
+    color: #de7d00;
     align-items: center;
 }
 
@@ -35,94 +38,110 @@ nav{
 .intro {
     display: flex;
     height: 100vh;
-    background-image: url('./images/nasa.jpg');
+    background-image: url('./images/ssspacex.jpg');
     background-repeat: no-repeat;
     object-fit: contain;
     background-size: cover;
     
 }
 
-.socials{
-    margin:30px;
-}
 
 .introArea {
     display: flex; 
     height: 100%;
     width:100%;
-    margin-top: 3.9%;
-    margin-left: 3.5%;
     justify-content: space-between;
     align-items: center;
+    padding: 80px;
 }
 
-.socials{
-    padding-bottom: 100px;
+h1 {
+    font-size: 50px;
+    color: #0b441f;
 }
 
-.github {
-    height: 105px;
-    position: relative;
-    top: 0px;
-    left: 104px
-    
-}
 
-.twitter {
-    height: 65px;
-    position: relative;
-    top: 60px;
-    left: 10px
-}
-
-.logo{
-    height: 120px;
-}
 
 .intro p{
     font-size: 30px;
     color:white;
 }
 
-h1{
-    font-size:50px;
-    color:#1DB954;
-}
+
 
 .button{
     margin-top: 0px;
     width:150px;
     height:50px;
-    background-color:goldenrod;
+    background-color:#de7d00;
     border-radius:25px;
     text-align: center;
     font-size: 29px;
     color:black;
+    border: #de7d00 4px solid;
 }
 
 .button:hover{
-    background-color: fuchsia;
+    background-color: #7851a9;
     color: black;
+    border:#de7d00 4px solid;
 }
 
+h2 {
+    font-size: 40px;
+    color: #de7d00;
+    text-decoration: underline overline solid #7851a9 7px;
+}
 
 .sub-section{
     display:flex;
     justify-content: space-around;
     color: whitesmoke;
+    padding: 40px;
     
 }
 
-.information{
-    padding: 80px;
+.sub-section p{
+    font-size: 140%;
 }
 
-h2{
-    font-size: 40px;
-    color: fuchsia;
+.information{
+    padding: 40px;
 }
+
+.pic-container{
+    align-items: center;
+    text-align: center;
+}
+
+.my-pic{
+    width: 450px;
+    border-radius: 285px;
+    margin-bottom: 15px;
+}
+
+
+
+.project-card{
+    width: 200px;
+    height: 500px;
+    border: 1px solid whitesmoke;
+}
+
+.project-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+
+.gif{
+    padding: 10px;
+
+}
+
+
 
 footer {
-    height: 500px;
+    display: flex;
     background-color: darkcyan;
 }
