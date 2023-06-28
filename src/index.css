@@ -30,7 +30,7 @@ nav{
     font-size: 30px;
     height:100%;
     width: 48%;
-    color: #de7d00;
+    color: #0b441f;
     align-items: center;
 }
 
@@ -50,21 +50,35 @@ nav{
     display: flex; 
     height: 100%;
     width:100%;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     padding: 80px;
+}
+
+.socials{
+    margin-top: 70px;
+}
+
+.clock{
+    color:red;
+    font-weight: lighter;
+    position: absolute;
+    top: 2%;
+    left: 15%;
+    transform: translate(-2%, -15%);
+    font-size: 70px;
 }
 
 h1 {
     font-size: 50px;
-    color: #0b441f;
+    color: #de7d00;
 }
 
 
 
 .intro p{
     font-size: 30px;
-    color:white;
+    color:#ffffff;
 }
 
 
@@ -73,24 +87,21 @@ h1 {
     margin-top: 0px;
     width:150px;
     height:50px;
-    background-color:#de7d00;
+    background-color:#0b441f;
     border-radius:25px;
     text-align: center;
     font-size: 29px;
     color:black;
-    border: #de7d00 4px solid;
 }
 
 .button:hover{
     background-color: #7851a9;
     color: black;
-    border:#de7d00 4px solid;
 }
 
 h2 {
     font-size: 40px;
     color: #de7d00;
-    text-decoration: underline overline solid #7851a9 7px;
 }
 
 .sub-section{
@@ -103,10 +114,6 @@ h2 {
 
 .sub-section p{
     font-size: 140%;
-}
-
-.section-proj{
-    
 }
 
 .information{
@@ -124,17 +131,44 @@ h2 {
     margin-bottom: 15px;
 }
 
+.sub-proj{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 80px;
+}
 
+.run_code{
+    padding: 10px;
+    margin-top: 10px;
+    width: 150px;
+    height: 50px;
+    background-color: #0b441f;
+    text-align: center;
+    font-size: 15px;
+    color: black;
+}
+
+.run_code:hover{
+    background-color: #7851a9;
+    color: black;
+}
 
 .project-card{
-    width: 200px;
-    height: 500px;
-    border: 1px solid whitesmoke;
+    width: 70vw;
+    height: 70vh;
+    
 }
 
 .project-container {
-    display: flex;
+    display: auto;
     justify-content: space-around;
+}
+
+.project-container p{
+    color: burlywood;
+    text-align: left;
+    margin-left: 15px;
 }
 
 
