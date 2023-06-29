@@ -5,9 +5,36 @@ function displayTime(){
     var sec = dateTime.getSeconds();
     var session= document.getElementById('session')
 
-    document.getElementById('hours').innerHTML = hrs;
-    document.getElementById('minutes').innerHTML = min;
-    document.getElementById('seconds').innerHTML = sec;
+    if(hrs >= 12){
+        session.innerHTML='pm';
+    } else{
+        session.innerHTML='am';
+    }
 
+    if(hrs > 12){
+        hrs = hrs -12;
+    }
+    if(hrs < 10){
+        document.getElementById('hours').innerHTML="0"+hrs;
+    }
+    else{
+        document.getElementById('hours').innerHTML = hrs;
+    }
+
+    if(min < 10){
+        document.getElementById('minutes').innerHTML="0"+min;
+    }
+    else{
+        document.getElementById('minutes').innerHTML = min;
+    }
+    
+    if(sec < 10){
+        document.getElementById('seconds').innerHTML="0"+sec;
+    }
+    else{
+        document.getElementById('seconds').innerHTML = sec;
+    }
+    
+    
 }
-setInterval(displayTime, 10);
+setInterval(displayTime, 1000);

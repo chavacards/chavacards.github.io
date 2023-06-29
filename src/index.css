@@ -23,6 +23,30 @@ nav{
     
 }
 
+#hours{
+    color:aquamarine;
+}
+
+#hoursMins {
+    color: palevioletred;
+}
+
+#minutes {
+    color: peachpuff;
+}
+
+#minsSecs{
+    color: violet;
+}
+
+#seconds{
+    color: navy;
+}
+
+#session{
+    color:seagreen;
+}
+
 .navBar ul{
     display: flex;
     list-style-type: none;
@@ -64,9 +88,9 @@ nav{
     font-weight: lighter;
     position: absolute;
     top: 2%;
-    left: 15%;
+    left: 14%;
     transform: translate(-2%, -15%);
-    font-size: 70px;
+    font-size: 55px;
 }
 
 h1 {
@@ -154,15 +178,11 @@ h2 {
     color: black;
 }
 
-.project-card{
-    width: 70vw;
-    height: 70vh;
-    
-}
 
 .project-container {
     display: auto;
     justify-content: space-around;
+    height: 100vh;
 }
 
 .project-container p{
@@ -171,6 +191,19 @@ h2 {
     margin-left: 15px;
 }
 
+.fname{
+    display:inline-block;
+    color:aquamarine;
+    background: transparent;
+}
+
+#finput{
+    border: salmon solid;
+}
+
+#fbutton{
+    border: steelblue solid;
+}
 
 .gif{
     padding: 10px;
