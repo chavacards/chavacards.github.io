@@ -4,9 +4,7 @@ body{
 }
 
 section{
-    
     background-color: black;
-    
 }
 
 .logo {
@@ -23,28 +21,11 @@ nav{
     
 }
 
-#hours{
-    color:aquamarine;
-}
-
-#hoursMins {
-    color: palevioletred;
-}
-
-#minutes {
-    color: peachpuff;
-}
-
-#minsSecs{
-    color: violet;
-}
-
-#seconds{
-    color: navy;
-}
-
 #session{
     color:seagreen;
+}
+#asciiArt{
+    color:white;
 }
 
 .navBar ul{
@@ -62,7 +43,7 @@ nav{
 .intro {
     display: flex;
     height: 100vh;
-    background-image: url('./images/ssspacex.jpg');
+    background-image: url('../images/ssspacex.jpg');
     background-repeat: no-repeat;
     object-fit: contain;
     background-size: cover;
@@ -197,13 +178,22 @@ h2 {
     background: transparent;
 }
 
+.leyenda{
+    color:aquamarine;
+}
+
+.rates{
+    color:aqua;
+}
+
 #finput{
-    border: salmon solid;
+    border: salmon groove;
 }
 
 #fbutton{
-    border: steelblue solid;
+    border: steelblue groove;
 }
+
 
 .gif{
     padding: 10px;

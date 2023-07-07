@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html>
-
-<source src="./Game_Changer.mp3" >
+<html lang="en">
 
 <head>
     <title>SUS</title>
-    <link href="src/index.css" type="text/css" rel="stylesheet">
+    <link href="CSS/index.css" type="text/css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Raleway:wght@200&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
 </head>
 
 <body>
@@ -16,7 +16,7 @@
 
     <div class="navBar">
         <nav>
-            <img class="logo" src="src/images/logologo.jpg">
+            <img class="logo" src="images/logologo.jpg">
             <div class="clock">
                 <span id="hours">00</span>
                 <span id="hoursMins">:</span>
@@ -82,7 +82,7 @@
             <p>Hello my name is Salvador Ulibarri Sierra, I have big interests in cybersecurity, artificial intelligence, data science and web developing. I am a Mexican software developer currently based in Mexico City that still has a lot to learn.</p>        
         </div>
         <div class="pic-container">
-            <img class="my-pic" src="src/images/my-pic.jpg" alt="Salvador's picture">
+            <img class="my-pic" src="images/my-pic.jpg" alt="Salvador's picture">
             <br>
             <p>This is a picture of me in Delhi, India!</p>
         </div>
@@ -93,6 +93,7 @@
         <div class="project-container">
             <form>
                 <p id="textToType"> </p>
+                <p id="textToType2"> </p>
                 
                 <div class="'fname">
                     <button for="fname" id="fbutton"class="fname">++? ==></button>
@@ -100,23 +101,41 @@
                 </div>
             </form>
         </div>
+
+        <div class="project-container2">
+            <h2>Currency Echange</h2> 
+            <div class="leyenda">
+                <p>DKK = Denmark, EUR = Euro, GBP = Great Britain, ISK = Iceland, MXN = Que viva Mexico, NOK = Norway, USD = Gabacho dollar </p>
+            </div>
+            <div class="rates">
+                <div class="rate1"></div>
+                <div class="rate2"></div>
+            </div>
+            <div class="rates2">
+                <div class="initial">
+                    <div class="options"><select></select></div>
+                    <div class="input"><input type="number"></div>
+                </div>
+                <button class="swap">
+                    swap
+                </button>
+                <div class="target">
+                    <div class="options"><select></select></div>
+                    <div class="input"><input disabled type="number"></div>
+                </div>
+            </div>
+            <button class="result">Conversion</button>
+        </div>
     </section>
 
     <footer>
-        <p>This is one of my favorite websites: <a href="./arts and crafts.html" target="_blank">arts and crafts</a></p>
-        <br>
-        <ul>
-
-            <li>Learn to code</li>
-            <li>Start a company</li>
-            <li>Help the world</li>
-        </ul>
         <img class="gif" src="https://content.codecademy.com/articles/github-pages-via-web-app/happy-ice-cream.gif" />
     </footer>
 
-    <script src="src/scripts/clock.js"></script>
-    <script src="src/scripts/project1.js"></script>
-
+    <script src="scripts/clock.js"></script>
+    <script src="scripts/project1.js"></script>
+    <script src="scripts/currency.js"></script>
+   
 </body>
 
 </html>

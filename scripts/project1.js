@@ -1,10 +1,13 @@
 const textToType= document.getElementById("textToType")
-const phrases=['Hello, nice to meet you!!! What is your[>~HV9', ' name?!?','Do you like dancing?', 'Would you dance with me?']
-const button=document.getElementById("fbutton")
+const textToType2= document.getElementById("textToType2")
+const phrases=['Hello, nice to meet you!!! What is your[>~HV9', ' name?!?', ' do you like dancing?', 'Would you dance with me?'];
+
 let i=0;
 let j=0;
 let cont=0;
-let array=[]
+let array=[];
+
+textToType2.style.hidden = true;
 
 function loop(){
     
@@ -29,7 +32,7 @@ function loop(){
         i++
         
     } 
-    setTimeout(loop,70)
+    setTimeout(loop,55)
 }
 
 ///loop()
@@ -48,8 +51,18 @@ function chispa(){
     
 }
 
+function primeraRespuesta(input){
+    let name= input;
+    let respuesta = [name+phrases[2]]
+    console.log('erroooor')
+    textToType2.style.hidden = false;
+
+}
+
 
 window.addEventListener('scroll', chispa);
 
 
-button.addEventListener('click',console.log("holaaaa perrillooo"))
+
+
+document.getElementById("fbutton").addEventListener('click',primeraRespuesta())
