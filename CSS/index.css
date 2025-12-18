@@ -1,149 +1,191 @@
-body{
-    background-color:black;
+/* ===== Reset básico para evitar márgenes que cortan el hero ===== */
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: black;
     font-family: 'DotGothic16', sans-serif;
 }
 
-section{
+section {
     background-color: black;
 }
 
+/* ===== Navbar: fija arriba para que no empuje el hero ===== */
+:root {
+    --nav-h: 120px;
+    /* ajusta si quieres (110–140) */
+}
+
+.navBar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+}
+
+/* ===== Nav ===== */
 .logo {
     height: 100px;
 }
 
-nav{
+nav {
     display: flex;
     justify-content: space-between;
-    font-size:40px;
+    align-items: center;
+    font-size: 40px;
     color: #de7d00;
     background-color: black;
-
-    
+    height: var(--nav-h);
+    position: relative;
+    /* para que .clock se posicione respecto al nav */
+    box-sizing: border-box;
+    padding: 0 20px;
+    /* un poco de aire lateral */
 }
 
-#session{
-    color:seagreen;
-}
-#asciiArt{
-    color:white;
+#session {
+    color: seagreen;
 }
 
-.navBar ul{
+#asciiArt {
+    color: white;
+}
+
+.navBar ul {
     display: flex;
     list-style-type: none;
     justify-content: space-around;
     font-size: 30px;
-    height:100%;
+    height: 100%;
     width: 48%;
     color: #0b441f;
     align-items: center;
+    margin: 0;
+    /* evita jumps */
+    padding: 0;
+    /* evita jumps */
 }
 
-
+/* ===== HERO ===== */
 .intro {
     display: flex;
-    height: 100vh;
+
+    /* Antes era height: 100vh y se cortaba por el nav.
+       Ahora compensamos el nav con padding-top. */
+    min-height: 100vh;
+    padding-top: var(--nav-h);
+    box-sizing: border-box;
+
     background-image: url('../images/ssspacex.jpg');
     background-repeat: no-repeat;
-    object-fit: contain;
     background-size: cover;
-    
+    background-position: center;
 }
 
-
+/* Contenido dentro del hero */
 .introArea {
-    display: flex; 
+    display: flex;
     height: 100%;
-    width:100%;
+    width: 100%;
     justify-content: center;
     flex-direction: column;
     padding: 80px;
 }
 
-.socials{
+.socials {
     margin-top: 70px;
 }
 
-.clock{
-    color:red;
+/* ===== Clock: ahora queda “pegado” al nav y centrado vertical ===== */
+.clock {
+    color: red;
     font-weight: lighter;
     position: absolute;
-    top: 2%;
+    top: 50%;
     left: 14%;
-    transform: translate(-2%, -15%);
+    transform: translate(-2%, -50%);
     font-size: 55px;
 }
 
+/* ===== Tipografía hero ===== */
 h1 {
     font-size: 50px;
     color: #de7d00;
 }
 
-
-
-.intro p{
+.intro p {
     font-size: 30px;
-    color:#ffffff;
+    color: #ffffff;
 }
 
-
-
-.button{
+/* ===== Botón ===== */
+.button {
     margin-top: 0px;
-    width:150px;
-    height:50px;
-    background-color:#0b441f;
-    border-radius:25px;
+    width: 150px;
+    height: 50px;
+    background-color: #0b441f;
+    border-radius: 25px;
     text-align: center;
     font-size: 29px;
-    color:black;
+    color: black;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
 }
 
-.button:hover{
+.button:hover {
     background-color: #7851a9;
     color: black;
 }
 
+/* ===== Secciones ===== */
 h2 {
     font-size: 40px;
     color: #de7d00;
 }
 
-.sub-section{
-    display:flex;
+.sub-section {
+    display: flex;
     justify-content: space-around;
     color: whitesmoke;
     padding: 40px;
-    
 }
 
-.sub-section p{
+.sub-section p {
     font-size: 140%;
 }
 
-.information{
+.information {
     padding: 40px;
 }
 
-.pic-container{
+.pic-container {
     align-items: center;
     text-align: center;
 }
 
-.my-pic{
+.my-pic {
     width: 450px;
     border-radius: 285px;
     margin-bottom: 15px;
 }
 
-.sub-proj{
+/* ===== Projects ===== */
+.sub-proj {
     display: flex;
     flex-direction: column;
     text-align: center;
     padding: 80px;
 }
 
-.run_code{
+.run_code {
     padding: 10px;
     margin-top: 10px;
     width: 150px;
@@ -152,57 +194,61 @@ h2 {
     text-align: center;
     font-size: 15px;
     color: black;
+    cursor: pointer;
 }
 
-.run_code:hover{
+.run_code:hover {
     background-color: #7851a9;
     color: black;
 }
 
-
 .project-container {
-    display: auto;
-    justify-content: space-around;
+    /* "display: auto" no existe; lo dejo como block por defecto */
+    display: block;
     height: 100vh;
 }
 
-.project-container p{
+.project-container p {
     color: burlywood;
     text-align: left;
     margin-left: 15px;
 }
 
-.fname{
-    display:inline-block;
-    color:aquamarine;
+.fname {
+    display: inline-block;
+    color: aquamarine;
     background: transparent;
 }
 
-.leyenda{
-    color:aquamarine;
+.leyenda {
+    color: aquamarine;
 }
 
-.rates{
-    color:aqua;
+.rates {
+    color: aqua;
 }
 
-#finput{
+#finput {
     border: salmon groove;
 }
 
-#fbutton{
+#fbutton {
     border: steelblue groove;
 }
 
-
-.gif{
+/* ===== Footer ===== */
+.gif {
     padding: 10px;
-
 }
-
-
 
 footer {
     display: flex;
     background-color: darkcyan;
+}
+
+/* ===== Bonus: en móvil, vh a veces falla por la barra del navegador ===== */
+@supports (height: 100svh) {
+    .intro {
+        min-height: 100svh;
+    }
 }
