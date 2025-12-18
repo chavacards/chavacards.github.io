@@ -287,3 +287,43 @@ footer {
         min-height: 100svh;
     }
 }
+
+/* ===== Navbar: unificar verdes + reloj centrado real ===== */
+:root {
+    --green: #2EEA7B;
+    /* tu verde del reloj */
+}
+
+/* Todos los textos verdes del navbar */
+.navBar a,
+.navBar li {
+    color: var(--green) !important;
+}
+
+.navBar a:hover,
+.navBar li:hover {
+    color: var(--green) !important;
+    text-shadow: 0 0 10px rgba(46, 234, 123, 0.22);
+}
+
+/* El reloj centrado EXACTO en la pantalla */
+nav {
+    position: relative;
+}
+
+/* Ignora el grid para el reloj: lo ponemos en el centro del viewport */
+.clock {
+    position: absolute !important;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    justify-self: unset !important;
+}
+
+/* ===== Hero: bajar letras ===== */
+.introArea {
+    justify-content: flex-start;
+    /* por si sigue en center */
+    padding-top: 170px;
+    /* ajusta 150–220 según te guste */
+}
