@@ -1,4 +1,4 @@
-/* ===== Reset básico ===== */
+/* ===== RESET ===== */
 html,
 body {
     margin: 0;
@@ -8,13 +8,12 @@ body {
 :root {
     --nav-h: 78px;
 
-    /* Colores */
     --green: #2EEA7B;
-    /* reloj */
+    /* reloj + navbar */
     --orange: #de7d00;
-    /* títulos */
+    /* hover navbar + títulos */
     --darkgreen: #0b441f;
-    /* links */
+    /* botones */
 }
 
 body {
@@ -26,8 +25,7 @@ section {
     background-color: black;
 }
 
-/* ===== NAVBAR flotante oculto (aparece con hover arriba) ===== */
-/* ===== NAVBAR flotante oculto (aparece con hover arriba) ===== */
+/* ===== NAVBAR OCULTO (HOVER REVEAL) ===== */
 .navBar {
     position: fixed;
     top: 0;
@@ -36,11 +34,8 @@ section {
     height: var(--nav-h);
     z-index: 9999;
 
-    /* oculto, pero dejamos una “tira” tocable arriba */
     opacity: 0;
     transform: translateY(calc(-1 * (var(--nav-h) - 16px)));
-    pointer-events: auto;
-
     transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
@@ -50,15 +45,14 @@ section {
     transform: translateY(0);
 }
 
-/* Contenido del nav */
+/* ===== NAV CONTENIDO ===== */
 nav {
+    position: relative;
     height: 100%;
     display: grid;
     grid-template-columns: 72px 1fr max-content;
     align-items: center;
-    gap: 16px;
     padding: 0 18px;
-    box-sizing: border-box;
     background: black;
 }
 
@@ -68,50 +62,34 @@ nav {
     width: auto;
 }
 
-/* Reloj */
+/* ===== CLOCK (CENTRO REAL) ===== */
 .clock {
-    justify-self: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     font-size: 22px;
     color: var(--green);
-    font-weight: 400;
     white-space: nowrap;
-    line-height: 1;
-    text-shadow: 0 0 10px rgba(46, 234, 123, 0.18);
+    text-shadow: 0 0 10px rgba(46, 234, 123, 0.2);
 }
 
 #session {
-    color: #A6FFCB;
-    /* un poco más claro */
+    color: var(--green);
 }
 
-#asciiArt {
-    color: white;
-}
-
-/* Links */
+/* ===== NAV LINKS ===== */
 .navBar ul {
     display: flex;
-    align-items: center;
     gap: 34px;
+    list-style: none;
     margin: 0;
     padding: 0;
-    list-style: none;
-    white-space: nowrap;
     font-size: 22px;
 }
 
-.navBar a {
-    color: var(--darkgreen);
-    text-decoration: none;
-}
-
-.navBar a:hover {
-    color: var(--orange);
-}
-
-/* Si todavía usas <li> sin <a>, igual funciona */
 .navBar li {
-    color: var(--darkgreen);
+    color: var(--green);
     cursor: pointer;
 }
 
@@ -119,13 +97,15 @@ nav {
     color: var(--orange);
 }
 
+.navBar a {
+    color: inherit;
+    text-decoration: none;
+}
+
 /* ===== HERO ===== */
 .intro {
-    display: flex;
-
-    /* Foto full-screen real (ya no resta nav) */
     min-height: 100vh;
-
+    display: flex;
     background-image: url('../images/ssspacex.jpg');
     background-repeat: no-repeat;
     background-size: cover;
@@ -134,17 +114,12 @@ nav {
 
 .introArea {
     display: flex;
-    width: 100%;
-    height: 100%;
-    justify-content: flex-start;
-    /* antes center */
     flex-direction: column;
-    padding: 80px;
-    padding-top: 140px;
-    /* empuja texto hacia abajo */
-    box-sizing: border-box;
+    justify-content: flex-start;
+    padding: 180px 80px 80px;
 }
 
+/* Hero text */
 h1 {
     font-size: 50px;
     color: var(--orange);
@@ -152,10 +127,10 @@ h1 {
 
 .intro p {
     font-size: 30px;
-    color: #ffffff;
+    color: white;
 }
 
-/* Botón */
+/* Button */
 .button {
     width: 150px;
     height: 50px;
@@ -167,18 +142,20 @@ h1 {
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 .button:hover {
-    background-color: #7851a9;
-    color: black;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(11, 68, 31, 0.45);
 }
 
+/* Social icons */
 .socials {
     margin-top: 70px;
 }
 
-/* ===== SECCIONES ===== */
+/* ===== SECTIONS ===== */
 h2 {
     font-size: 40px;
     color: var(--orange);
@@ -200,14 +177,12 @@ h2 {
 }
 
 .pic-container {
-    align-items: center;
     text-align: center;
 }
 
 .my-pic {
     width: 450px;
     border-radius: 285px;
-    margin-bottom: 15px;
 }
 
 /* ===== PROJECTS ===== */
@@ -219,53 +194,29 @@ h2 {
 }
 
 .project-container {
-    display: block;
     height: 100vh;
 }
 
 .project-container p {
     color: burlywood;
     text-align: left;
-    margin-left: 15px;
-}
-
-.fname {
-    display: inline-block;
-    color: aquamarine;
-    background: transparent;
-}
-
-.leyenda {
-    color: aquamarine;
-}
-
-.rates {
-    color: aqua;
-}
-
-#finput {
-    border: salmon groove;
-}
-
-#fbutton {
-    border: steelblue groove;
 }
 
 /* ===== FOOTER ===== */
-.gif {
-    padding: 10px;
-}
-
 footer {
     display: flex;
     background-color: darkcyan;
 }
 
-/* ===== Responsive ===== */
+.gif {
+    padding: 10px;
+}
+
+/* ===== RESPONSIVE ===== */
 @media (max-width: 900px) {
     .navBar ul {
-        gap: 18px;
         font-size: 18px;
+        gap: 18px;
     }
 
     .clock {
@@ -274,56 +225,7 @@ footer {
 }
 
 @media (max-width: 700px) {
-
-    /* para que nunca se encime en móvil */
     .clock {
         display: none;
     }
-}
-
-/* ===== Bonus: móvil moderno (svh) ===== */
-@supports (height: 100svh) {
-    .intro {
-        min-height: 100svh;
-    }
-}
-
-/* ===== Navbar: unificar verdes + reloj centrado real ===== */
-:root {
-    --green: #2EEA7B;
-    /* tu verde del reloj */
-}
-
-/* Todos los textos verdes del navbar */
-.navBar a,
-.navBar li {
-    color: var(--green) !important;
-}
-
-.navBar a:hover,
-.navBar li:hover {
-    color: var(--green) !important;
-    text-shadow: 0 0 10px rgba(46, 234, 123, 0.22);
-}
-
-/* El reloj centrado EXACTO en la pantalla */
-nav {
-    position: relative;
-}
-
-/* Ignora el grid para el reloj: lo ponemos en el centro del viewport */
-.clock {
-    position: absolute !important;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    justify-self: unset !important;
-}
-
-/* ===== Hero: bajar letras ===== */
-.introArea {
-    justify-content: flex-start;
-    /* por si sigue en center */
-    padding-top: 170px;
-    /* ajusta 150–220 según te guste */
 }
