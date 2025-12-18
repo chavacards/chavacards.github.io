@@ -16,36 +16,69 @@ section {
 
 /* ===== Navbar: fija arriba para que no empuje el hero ===== */
 :root {
-    --nav-h: 120px;
-    /* ajusta si quieres (110–140) */
+    --nav-h: 80px;
+    /* antes 120 */
 }
 
+/* Navbar */
 .navBar {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
+    height: var(--nav-h);
+    background: black;
     z-index: 9999;
 }
 
-/* ===== Nav ===== */
-.logo {
-    height: 100px;
+/* Nav como grid: izquierda logo, centro reloj, derecha links */
+nav {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 120px 1fr auto;
+    align-items: center;
+    padding: 0 18px;
+    box-sizing: border-box;
+    font-size: 22px;
+    /* antes 40 */
 }
 
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 40px;
+/* Logo */
+.logo {
+    height: 52px;
+}
+
+/* antes 100 */
+
+/* Reloj centrado vertical y horizontal en su columna */
+.clock {
+    position: static;
+    /* quitamos absolute */
+    justify-self: start;
+    /* o center si lo quieres al centro */
+    font-size: 42px;
+    /* antes 55 */
+    color: red;
+}
+
+/* Links derecha */
+.navBar ul {
+    width: auto;
+    /* ya no 48% */
+    gap: 38px;
+    font-size: 22px;
+    margin: 0;
+    padding: 0;
+    justify-content: end;
+}
+
+.navBar li {
+    cursor: pointer;
+}
+
+.navBar li:hover {
     color: #de7d00;
-    background-color: black;
-    height: var(--nav-h);
-    position: relative;
-    /* para que .clock se posicione respecto al nav */
-    box-sizing: border-box;
-    padding: 0 20px;
-    /* un poco de aire lateral */
+}* un poco de aire lateral */
 }
 
 #session {
