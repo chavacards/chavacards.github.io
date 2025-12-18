@@ -1,8 +1,20 @@
-/* ===== Reset básico para evitar márgenes que cortan el hero ===== */
+/* ===== Reset básico ===== */
 html,
 body {
     margin: 0;
     padding: 0;
+}
+
+:root {
+    --nav-h: 78px;
+
+    /* Colores */
+    --green: #2EEA7B;
+    /* reloj */
+    --orange: #de7d00;
+    /* títulos */
+    --darkgreen: #0b441f;
+    /* links */
 }
 
 body {
@@ -14,141 +26,139 @@ section {
     background-color: black;
 }
 
-/* ===== Navbar: fija arriba para que no empuje el hero ===== */
-:root {
-    --nav-h: 80px;
-    /* antes 120 */
-}
-
-/* Navbar */
+/* ===== NAVBAR flotante oculto (aparece con hover arriba) ===== */
 .navBar {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: var(--nav-h);
-    background: black;
     z-index: 9999;
+
+    /* Oculto por defecto */
+    opacity: 0;
+    transform: translateY(-100%);
+    pointer-events: none;
+
+    transition:
+        opacity 0.35s ease,
+        transform 0.35s ease;
 }
 
-/* Nav como grid: izquierda logo, centro reloj, derecha links */
+/* Zona invisible para activar hover (20px arriba) */
+.navBar::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 20px;
+}
+
+/* Aparece al pasar el mouse o al tabular dentro */
+.navBar:hover,
+.navBar:focus-within {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+/* Contenido del nav */
 nav {
     height: 100%;
     display: grid;
-    grid-template-columns: 120px 1fr auto;
+    grid-template-columns: 72px 1fr max-content;
+    /* logo | reloj | links */
     align-items: center;
+    gap: 16px;
     padding: 0 18px;
     box-sizing: border-box;
-    font-size: 22px;
-    /* antes 40 */
+    background: black;
 }
 
 /* Logo */
 .logo {
-    height: 52px;
-}
-
-/* antes 100 */
-
-/* Reloj centrado vertical y horizontal en su columna */
-.clock {
-    position: static;
-    /* quitamos absolute */
-    justify-self: start;
-    /* o center si lo quieres al centro */
-    font-size: 42px;
-    /* antes 55 */
-    color: red;
-}
-
-/* Links derecha */
-.navBar ul {
+    height: 48px;
     width: auto;
-    /* ya no 48% */
-    gap: 38px;
+}
+
+/* Reloj */
+.clock {
+    justify-self: center;
     font-size: 22px;
-    margin: 0;
-    padding: 0;
-    justify-content: end;
-}
-
-.navBar li {
-    cursor: pointer;
-}
-
-.navBar li:hover {
-    color: #de7d00;
-}* un poco de aire lateral */
+    color: var(--green);
+    font-weight: 400;
+    white-space: nowrap;
+    line-height: 1;
+    text-shadow: 0 0 10px rgba(46, 234, 123, 0.18);
 }
 
 #session {
-    color: seagreen;
+    color: #A6FFCB;
+    /* un poco más claro */
 }
 
 #asciiArt {
     color: white;
 }
 
+/* Links */
 .navBar ul {
     display: flex;
-    list-style-type: none;
-    justify-content: space-around;
-    font-size: 30px;
-    height: 100%;
-    width: 48%;
-    color: #0b441f;
     align-items: center;
+    gap: 34px;
     margin: 0;
-    /* evita jumps */
     padding: 0;
-    /* evita jumps */
+    list-style: none;
+    white-space: nowrap;
+    font-size: 22px;
+}
+
+.navBar a {
+    color: var(--darkgreen);
+    text-decoration: none;
+}
+
+.navBar a:hover {
+    color: var(--orange);
+}
+
+/* Si todavía usas <li> sin <a>, igual funciona */
+.navBar li {
+    color: var(--darkgreen);
+    cursor: pointer;
+}
+
+.navBar li:hover {
+    color: var(--orange);
 }
 
 /* ===== HERO ===== */
 .intro {
     display: flex;
 
-    /* Antes era height: 100vh y se cortaba por el nav.
-       Ahora compensamos el nav con padding-top. */
+    /* Foto full-screen real (ya no resta nav) */
     min-height: 100vh;
-    padding-top: var(--nav-h);
-    box-sizing: border-box;
 
     background-image: url('../images/ssspacex.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
+    background-position: center 20%;
 }
 
-/* Contenido dentro del hero */
 .introArea {
     display: flex;
-    height: 100%;
     width: 100%;
+    height: 100%;
     justify-content: center;
     flex-direction: column;
     padding: 80px;
+    box-sizing: border-box;
 }
 
-.socials {
-    margin-top: 70px;
-}
-
-/* ===== Clock: ahora queda “pegado” al nav y centrado vertical ===== */
-.clock {
-    color: red;
-    font-weight: lighter;
-    position: absolute;
-    top: 50%;
-    left: 14%;
-    transform: translate(-2%, -50%);
-    font-size: 55px;
-}
-
-/* ===== Tipografía hero ===== */
 h1 {
     font-size: 50px;
-    color: #de7d00;
+    color: var(--orange);
 }
 
 .intro p {
@@ -156,17 +166,14 @@ h1 {
     color: #ffffff;
 }
 
-/* ===== Botón ===== */
+/* Botón */
 .button {
-    margin-top: 0px;
     width: 150px;
     height: 50px;
-    background-color: #0b441f;
+    background-color: var(--darkgreen);
     border-radius: 25px;
-    text-align: center;
     font-size: 29px;
     color: black;
-
     display: flex;
     align-items: center;
     justify-content: center;
@@ -178,10 +185,14 @@ h1 {
     color: black;
 }
 
-/* ===== Secciones ===== */
+.socials {
+    margin-top: 70px;
+}
+
+/* ===== SECCIONES ===== */
 h2 {
     font-size: 40px;
-    color: #de7d00;
+    color: var(--orange);
 }
 
 .sub-section {
@@ -210,7 +221,7 @@ h2 {
     margin-bottom: 15px;
 }
 
-/* ===== Projects ===== */
+/* ===== PROJECTS ===== */
 .sub-proj {
     display: flex;
     flex-direction: column;
@@ -218,25 +229,7 @@ h2 {
     padding: 80px;
 }
 
-.run_code {
-    padding: 10px;
-    margin-top: 10px;
-    width: 150px;
-    height: 50px;
-    background-color: #0b441f;
-    text-align: center;
-    font-size: 15px;
-    color: black;
-    cursor: pointer;
-}
-
-.run_code:hover {
-    background-color: #7851a9;
-    color: black;
-}
-
 .project-container {
-    /* "display: auto" no existe; lo dejo como block por defecto */
     display: block;
     height: 100vh;
 }
@@ -269,7 +262,7 @@ h2 {
     border: steelblue groove;
 }
 
-/* ===== Footer ===== */
+/* ===== FOOTER ===== */
 .gif {
     padding: 10px;
 }
@@ -279,7 +272,27 @@ footer {
     background-color: darkcyan;
 }
 
-/* ===== Bonus: en móvil, vh a veces falla por la barra del navegador ===== */
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+    .navBar ul {
+        gap: 18px;
+        font-size: 18px;
+    }
+
+    .clock {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 700px) {
+
+    /* para que nunca se encime en móvil */
+    .clock {
+        display: none;
+    }
+}
+
+/* ===== Bonus: móvil moderno (svh) ===== */
 @supports (height: 100svh) {
     .intro {
         min-height: 100svh;
