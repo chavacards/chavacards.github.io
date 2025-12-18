@@ -27,6 +27,7 @@ section {
 }
 
 /* ===== NAVBAR flotante oculto (aparece con hover arriba) ===== */
+/* ===== NAVBAR flotante oculto (aparece con hover arriba) ===== */
 .navBar {
     position: fixed;
     top: 0;
@@ -35,32 +36,18 @@ section {
     height: var(--nav-h);
     z-index: 9999;
 
-    /* Oculto por defecto */
+    /* oculto, pero dejamos una “tira” tocable arriba */
     opacity: 0;
-    transform: translateY(-100%);
-    pointer-events: none;
+    transform: translateY(calc(-1 * (var(--nav-h) - 16px)));
+    pointer-events: auto;
 
-    transition:
-        opacity 0.35s ease,
-        transform 0.35s ease;
+    transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
-/* Zona invisible para activar hover (20px arriba) */
-.navBar::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 20px;
-}
-
-/* Aparece al pasar el mouse o al tabular dentro */
 .navBar:hover,
 .navBar:focus-within {
     opacity: 1;
     transform: translateY(0);
-    pointer-events: auto;
 }
 
 /* Contenido del nav */
@@ -68,7 +55,6 @@ nav {
     height: 100%;
     display: grid;
     grid-template-columns: 72px 1fr max-content;
-    /* logo | reloj | links */
     align-items: center;
     gap: 16px;
     padding: 0 18px;
@@ -150,9 +136,12 @@ nav {
     display: flex;
     width: 100%;
     height: 100%;
-    justify-content: center;
+    justify-content: flex-start;
+    /* antes center */
     flex-direction: column;
     padding: 80px;
+    padding-top: 140px;
+    /* empuja texto hacia abajo */
     box-sizing: border-box;
 }
 
