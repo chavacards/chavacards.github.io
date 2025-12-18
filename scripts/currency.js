@@ -1,3 +1,5 @@
+// Api link https://manage.exchangeratesapi.io/dashboard
+
 let rate1 = document.querySelector(".rate1");
 let rate2 = document.querySelector(".rate2");
 let resultBtn = document.querySelector(".result");

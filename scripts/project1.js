@@ -28,7 +28,8 @@ function loop(){
         j++
         i++
     }
-    else{
+    else
+    {
         i++
         
     } 
